@@ -14,7 +14,7 @@
     <section class="main-checkout">
       <section class="flex-col gap-20">
         <div class="active checkout-div h-max">
-          <div class="flex pointer" onclick="handleStep1Header()">
+          <div class="flex pointer" onclick="handleStepHeader(1)">
             <div class="icon-box step-1-icon">
               <span class="number-item">1</span>
             </div>
@@ -92,21 +92,125 @@
                 valid ID and credit card. </label
               ><br />
             </div>
-            <button class="mt-10 custom-button" onclick="handleStep1()">
+            <button class="mt-10 custom-button" onclick="handleStep(1)">
               Continue
             </button>
           </div>
         </div>
+
         <div class="active checkout-div h-max">
-          <div class="flex pointer" onclick="handleStep2Header()">
+          <div class="flex pointer" onclick="handleStepHeader(2)">
             <div class="icon-box step-2-icon">
               <span class="number-item">2</span>
             </div>
             <h2>Your Information</h2>
           </div>
+
           <div class="content section-2-content">
-            <button class="mt-10 custom-button" onclick="handleStep2()">
+            <h3 class="f-16">Enter customer/patient information</h3>
+            <div class="inputs-grid mb-10">
+              <div class="inputs-grid-item">
+                <label class="input-label" for="first-name"
+                  >First name on photo id</label
+                >
+                <input type="text" name="first-name" id="first-name" />
+              </div>
+              <div class="inputs-grid-item">
+                <label class="input-label" for="last-name"
+                  >Last name on photo id</label
+                >
+                <input type="text" name="last-name" id="last-name" />
+              </div>
+              <div class="inputs-grid-item">
+                <label class="input-label" for="birth-date">Birth date</label>
+                <input type="date" name="birth-date" id="birth-date" />
+              </div>
+              <div class="inputs-grid-item">
+                <label class="input-label" for="email">Email</label>
+                <input type="email" name="email" id="email" />
+              </div>
+              <div class="inputs-grid-item">
+                <label class="input-label" for="mobile-number"
+                  >Mobile phone</label
+                >
+                <input type="tel" name="mobile-number" id="mobile-number" />
+              </div>
+              <br />
+            </div>
+            <button class="mt-10 custom-button" onclick="handleStep(2)">
               Continue
+            </button>
+          </div>
+        </div>
+
+        <div class="active checkout-div h-max">
+          <div class="flex pointer" onclick="handleStepHeader(3)">
+            <div class="icon-box step-3-icon">
+              <span class="number-item">3</span>
+            </div>
+            <h2>Payment</h2>
+          </div>
+
+          <div class="content section-3-content">
+            <h3 class="f-16 mb-10">Payment method</h3>
+
+            <div class="mb-10 pt-10 flex-col gap-20">
+              <label>
+                <input type="radio" name="payment" id="" checked />
+                I'm paying now with a credit or debit card
+              </label>
+              <label>
+                <input type="radio" name="payment" id="" />
+                I plan to pay at pickup with cash, card, debit
+              </label>
+            </div>
+            <br />
+            <button class="mt-10 custom-button" onclick="handleStep(3)">
+              Continue
+            </button>
+          </div>
+        </div>
+
+        <div class="active checkout-div h-max">
+          <div class="flex pointer" onclick="handleStepHeader(4)">
+            <div class="icon-box step-4-icon">
+              <span class="number-item">4</span>
+            </div>
+            <h2>Review</h2>
+          </div>
+
+          <div class="content section-4-content">
+            <div class="flex-product">
+              <div class="flex-start">
+                <img
+                  class="product-img"
+                  src="https://product-assets.iheartjane.com/cdn-cgi/image/width=200,fit=scale-down,format=auto,metadata=none/photos/8e/cb/8ecbb899-2941-43a4-a465-91f00fca6288.jpeg"
+                  alt="product-assets"
+                />
+              </div>
+              <div class="flex-col w-100">
+                <div class="product-block-1 mb-10">Indica</div>
+                <div class="product-between">
+                  <div class="weight-600 text-start">Pink - Kush</div>
+                  <div class="flex-col">
+                    <p class="grey margin-0">$18.41</p>
+                    <p class="grey margin-0 old-price">$23.99</p>
+                    <p></p>
+                  </div>
+                </div>
+                <div class="flex-col">
+                  <p class="margin-0">Pure Sunfarms</p>
+                  <p class="margin-0">1 x 3.5g @ $18.41</p>
+                  <p class="margin-0">Pink - Kush 23.26% Sale (3.5g)</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex-end">
+              Estimated Total <span class="weight-600">$19.33</span>
+            </div>
+            <br />
+            <button class="mt-10 custom-button w-100">
+              Proceed to payment
             </button>
           </div>
         </div>
@@ -167,16 +271,20 @@
     const step1Icon = document.querySelector(".step-1-icon");
     const section1Content = document.querySelector(".section-1-content");
 
-    const handleStep1 = () => {
-      step1Icon.innerHTML = `<i
+    const handleStep = (step) => {
+      document.querySelector(`.step-${step}-icon`).innerHTML = `<i
               class="fa-sharp fa-solid fa-circle-check fa-2x"
               style="color: #94b200"
             ></i>`;
-      section1Content.classList.add("hidden");
+      document
+        .querySelector(`.section-${step}-content`)
+        .classList.add("hidden");
     };
 
-    const handleStep1Header = () => {
-      section1Content.classList.toggle("hidden");
+    const handleStepHeader = (step) => {
+      document
+        .querySelector(`.section-${step}-content`)
+        .classList.toggle("hidden");
     };
   </script>
 </html>

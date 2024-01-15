@@ -32,10 +32,37 @@ textarea:focus-visible {
   border-radius: 24px;
 }
 
+.inputs-grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 32px;
+}
+
+.inputs-grid-item {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 0px;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
 .flex {
   display: flex;
   align-items: center;
   gap: 15px;
+}
+
+.flex-product {
+  display: flex;
+  gap: 24px;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: end;
+  gap: 5px;
 }
 
 .align-start {
@@ -56,6 +83,12 @@ textarea:focus-visible {
   justify-content: start;
 }
 
+.flex-start {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
 .gap-20 {
   gap: 24px;
 }
@@ -71,6 +104,12 @@ textarea:focus-visible {
   justify-content: space-between;
   align-items: center;
 }
+
+.product-between {
+  display: flex;
+  justify-content: space-between;
+}
+
 .width-50,
 .flex-between > p {
   line-height: 25px;
@@ -220,12 +259,81 @@ textarea:focus-visible {
   color: rgb(255, 255, 255);
 }
 
+.margin-0 {
+  margin: 2px;
+}
+
+.text-start {
+  text-align: start;
+}
+
+.product-img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border: 1px solid rgb(218, 218, 218);
+  border-radius: 24px;
+}
+
+.old-price {
+  color: rgb(135, 135, 135);
+  text-decoration: line-through;
+}
+
+.product-block-1 {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(14, 14, 14);
+  color: rgb(14, 14, 14);
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  padding: 2px 4px;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 15px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 3px;
+  width: fit-content;
+}
+
 input[type="checkbox"] {
   width: 18px;
   height: 18px;
   border-radius: 13px;
   accent-color: #f32735;
   border: 1px solid rgb(218, 218, 218);
+}
+
+input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #f32735;
+  border: 1px solid rgb(218, 218, 218);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="tel"] {
+  padding: 8px 0px;
+  width: 100%;
+  display: block;
+  outline: none;
+  background: transparent;
+  color: rgb(14, 14, 14);
+  border: 0px;
+  font-size: 16px;
+  border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+input[type="tel"]:focus {
+  border-bottom: 2px solid #f32735;
+}
+
+.input-label {
+  font-size: 14px;
 }
 
 .red-color {
