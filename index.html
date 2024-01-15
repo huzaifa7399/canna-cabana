@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/387d7c3cef.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="main-checkout">
+      <section class="flex-col gap-20">
+        <div class="active checkout-div h-max">
+          <div class="flex pointer" onclick="handleStep1Header()">
+            <div class="icon-box step-1-icon">
+              <span class="number-item">1</span>
+            </div>
+            <h2>Pickup options</h2>
+          </div>
+          <div class="content section-1-content">
+            <!-- address section -->
+            <!-- <div class="flex-col mb-40">
+            <h3 class="f-16">Your address</h3>
+            <div class="flex-between">
+              <p>
+                245 Douglas Dr, <br />
+                12 Toronto, ON M4W 2B9
+              </p>
+              <span class="span-button">Change</span>
+            </div>
+          </div> -->
+            <!-- pickup section  -->
+            <div class="flex-col mb-40">
+              <h3 class="f-16">Pickup store</h3>
+              <div class="flex mt-10 mb-10">
+                <img
+                  src="https://uploads.iheartjane.com/cdn-cgi/image/width=174,fit=scale-down,format=auto,metadata=none/uploads/633d4f14-5fd2-416e-bd1c-3d674bfee31d.png"
+                  alt="pickup logo"
+                  class="store-logo"
+                />
+                <p class="weight-600">Canna Cabana - Tisdale</p>
+              </div>
+              <p>1010-100 St, Tisdale, Saskatchewan, S0E 1T0</p>
+            </div>
+            <div class="flex-col mb-10">
+              <p>Pickup day</p>
+              <select name="" id="" class="custom-select">
+                <option value="today">Today</option>
+              </select>
+            </div>
+
+            <div class="flex-col mb-10">
+              <p>Pickup instructions</p>
+              <textarea
+                placeholder="e.g. Note to staff, special instructions"
+                rows="5"
+              ></textarea>
+            </div>
+            <br />
+            <div class="mt-10">
+              <input
+                type="checkbox"
+                id="condition-1"
+                name="condition-1"
+                value="consent"
+              />
+              <label class="custom-label" for="condition-1">
+                I consent to signup for the Canna Cabana rewards program where I
+                will receive marketing communications. By doing so, I understand
+                that I am allowing Canna Cabana and its technology provider(s)
+                to retain my personal contact details/ engagement history for
+                use in personalized marketing. Opt out at any time by replying
+                "STOP" to messages. Standard message and calling rates may
+                apply.<span class="red-color">*</span> </label
+              ><br />
+            </div>
+            <br />
+            <div class="mt-10 mb-10">
+              <input
+                type="checkbox"
+                id="condition-2"
+                name="condition-2"
+                value="consent"
+              />
+              <label class="custom-label" for="condition-2">
+                Heads up! For legal purposes, the customer whose name is on this
+                pickup or delivery order must be the same person receiving the
+                pick up or delivery order. They are also required to show their
+                valid ID and credit card. </label
+              ><br />
+            </div>
+            <button class="mt-10 custom-button" onclick="handleStep1()">
+              Continue
+            </button>
+          </div>
+        </div>
+        <div class="active checkout-div h-max">
+          <div class="flex pointer" onclick="handleStep2Header()">
+            <div class="icon-box step-2-icon">
+              <span class="number-item">2</span>
+            </div>
+            <h2>Your Information</h2>
+          </div>
+          <div class="content section-2-content">
+            <button class="mt-10 custom-button" onclick="handleStep2()">
+              Continue
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div class="h-max checkout-div">
+        <h2>Pickup Reservation</h2>
+        <br />
+        <h3 class="f-16 grey">Scheduled time</h3>
+        <p class="f-16 weight-600 pt-10 mb-10">Today</p>
+        <h3 class="f-16 grey pt-10">Store</h3>
+        <div class="flex mt-10 mb-10">
+          <img
+            src="https://uploads.iheartjane.com/cdn-cgi/image/width=174,fit=scale-down,format=auto,metadata=none/uploads/633d4f14-5fd2-416e-bd1c-3d674bfee31d.png"
+            alt="pickup logo"
+            class="store-logo"
+          />
+          <p class="weight-600">Canna Cabana - Tisdale</p>
+        </div>
+        <div class="flex align-start">
+          <div class="flex-col width-50">
+            <h3 class="f-16 grey pt-10">Location</h3>
+            <p>
+              1010-100 St
+              <br />
+              Tisdale, Saskatchewan
+              <br />
+              S0E 1T0
+            </p>
+          </div>
+          <div class="flex-col width-50">
+            <h3 class="f-16 grey pt-10">Today's hours</h3>
+            <p>Pickup 9:00 am – 6:45 pm</p>
+          </div>
+        </div>
+        <hr class="custom-hr" />
+        <p class="f-16 weight-600 mb-10">Summary</p>
+        <div class="summary-grid">
+          <div class="flex-between">Items (1)</div>
+          <div class="flex-between align-right">$24.99</div>
+          <div class="flex-between">Estimated savings</div>
+          <div class="flex-between align-right">-$4.83</div>
+          <div class="flex-between">Estimated service fee</div>
+          <div class="flex-between align-right">
+            <span class="free"> aaaa </span>
+          </div>
+          <div class="flex-between">Estimated sales tax</div>
+          <div class="flex-between align-right">$2.22</div>
+          <h2>Estimated total</h2>
+          <h2 class="align-right">$22.38</h2>
+        </div>
+        <button class="custom-button w-100">Proceed to payment</button>
+      </div>
+    </section>
+  </body>
+
+  <script>
+    const step1Icon = document.querySelector(".step-1-icon");
+    const section1Content = document.querySelector(".section-1-content");
+
+    const handleStep1 = () => {
+      step1Icon.innerHTML = `<i
+              class="fa-sharp fa-solid fa-circle-check fa-2x"
+              style="color: #94b200"
+            ></i>`;
+      section1Content.classList.add("hidden");
+    };
+
+    const handleStep1Header = () => {
+      section1Content.classList.toggle("hidden");
+    };
+  </script>
+</html>
