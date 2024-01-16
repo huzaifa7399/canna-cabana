@@ -61,7 +61,9 @@
                   <p class="margin-0">Pink - Kush 23.26% Sale (3.5g)</p>
 
                   <div class="flex">
-                    <span class="span-button">Edit</span>
+                    <span class="span-button" onclick="handleEditClick()"
+                      >Edit</span
+                    >
                     <span class="pointer">
                       <i class="fa-regular fa-trash-can"></i>
                     </span>
@@ -71,6 +73,55 @@
             </div>
           </div>
           <br />
+        </div>
+
+        <div class="modal-container" style="--m-background: transparent">
+          <div class="modal">
+            <div class="modal-header flex">
+              <span class="pointer" onclick="handleModalClose()">
+                <i class="fa-solid fa-xmark fa-2x"></i>
+              </span>
+              <h2 class="margin-0">Edit order</h2>
+            </div>
+            <hr class="custom-hr" />
+            <div class="flex-product modal-padding">
+              <div class="flex-start">
+                <img
+                  class="product-img"
+                  src="https://product-assets.iheartjane.com/cdn-cgi/image/width=200,fit=scale-down,format=auto,metadata=none/photos/8e/cb/8ecbb899-2941-43a4-a465-91f00fca6288.jpeg"
+                  alt="product-assets"
+                />
+              </div>
+              <div class="flex-col w-100">
+                <div class="product-block-1 mb-10">Indica</div>
+                <div class="weight-600 text-start">Pink - Kush</div>
+                <div class="flex-col">
+                  <p class="margin-0">Pure Sunfarms</p>
+                  <p class="margin-0">1 x 3.5g @ $18.41</p>
+                  <p class="margin-0">Pink - Kush 23.26% Sale (3.5g)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-items-center">
+              <div class="flex-col w-30 align-center">
+                <div class="weight-600 mb-10">Select quantity</div>
+                <div class="flex mt-10 gap-20">
+                  <span class="pointer" onclick="decrementQuantity()">
+                    <i class="fa-solid fa-minus fa-2x"></i>
+                  </span>
+                  <div class="order-quantity">1</div>
+                  <span class="pointer" onclick="incrementQuantity()">
+                    <i class="fa-solid fa-plus fa-2x"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="flex-col w-30 align-center">
+                <h2 class="margin-0">$5.99</h2>
+                <button class="mt-10 custom-button">Update</button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <div>
@@ -111,7 +162,7 @@
             </span>
           </div>
           <br />
-          <div class="promo-code-div hidden">
+          <div class="promo-code-div hidden-content">
             <div class="promo-code-input-div">
               <input type="text" placeholder="Enter code here" />
               <button class="custom-button w-30">Apply</button>
@@ -386,26 +437,44 @@
   <script>
     const iconTransform = document.querySelector(".icon-transform");
     const promoCodeDiv = document.querySelector(".promo-code-div");
+    const orderQuantity = document.querySelector(".order-quantity");
 
     const handleStep = (step) => {
       document.querySelector(`.step-${step}-icon`).innerHTML = `<i
-              class="fa-sharp fa-solid fa-circle-check fa-2x"
-              style="color: #94b200"
-            ></i>`;
+                  class="fa-sharp fa-solid fa-circle-check fa-2x"
+                  style="color: #94b200"
+                ></i>`;
       document
         .querySelector(`.section-${step}-content`)
-        .classList.add("hidden");
+        .classList.add("hidden-content");
     };
 
     const handleStepHeader = (step) => {
       document
         .querySelector(`.section-${step}-content`)
-        .classList.toggle("hidden");
+        .classList.toggle("hidden-content");
     };
 
     const handlePromoClick = () => {
       iconTransform.classList.toggle("fa-rotate-180");
-      promoCodeDiv.classList.toggle("hidden");
+      promoCodeDiv.classList.toggle("hidden-content");
+    };
+
+    const handleEditClick = () => {
+      document.querySelector(".modal-container").style.display = "block";
+    };
+
+    const handleModalClose = () => {
+      document.querySelector(".modal-container").style.display = "none";
+    };
+
+    const incrementQuantity = () => {
+      orderQuantity.innerHTML = `${parseInt(orderQuantity.innerHTML) + 1}`;
+    };
+
+    const decrementQuantity = () => {
+      if (orderQuantity.innerHTML === "1") return;
+      orderQuantity.innerHTML = `${parseInt(orderQuantity.innerHTML) - 1}`;
     };
   </script>
 </html>
