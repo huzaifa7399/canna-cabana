@@ -52,7 +52,7 @@
               </select>
             </div>
 
-            <div class="flex-col mb-10">
+            <div class="flex-col mb-10 custom-checkout">
               <p>Pickup instructions</p>
               <textarea
                 placeholder="e.g. Note to staff, special instructions"
@@ -60,12 +60,13 @@
               ></textarea>
             </div>
             <br />
-            <div class="mt-10">
+            <div class="mt-10 custom-checkout">
               <input
                 type="checkbox"
                 id="condition-1"
                 name="condition-1"
                 value="consent"
+                checked
               />
               <label class="custom-label" for="condition-1">
                 I consent to signup for the Canna Cabana rewards program where I
@@ -78,7 +79,7 @@
               ><br />
             </div>
             <br />
-            <div class="mt-10 mb-10">
+            <div class="mt-10 mb-10 custom-checkout">
               <input
                 type="checkbox"
                 id="condition-2"
@@ -155,11 +156,11 @@
             <h3 class="f-16 mb-10">Payment method</h3>
 
             <div class="mb-10 pt-10 flex-col gap-20">
-              <label>
+              <label class="custom-checkout">
                 <input type="radio" name="payment" id="" checked />
                 I'm paying now with a credit or debit card
               </label>
-              <label>
+              <label class="custom-checkout">
                 <input type="radio" name="payment" id="" />
                 I plan to pay at pickup with cash, card, debit
               </label>
